@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
+}
+.digital-img {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.galleria{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: serif;
+}
+.galleria p{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 150px);
+    grid-gap: 5px;
+    margin: 0;
+    /* height: 50%; */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .photo {
+    position: relative;
+    /* height: 200px;
+    width: 200px; */
   }
-  to {
-    transform: rotate(360deg);
+  .photo:nth-child(11){
+    grid-row: 2/4;
+    grid-column-start: 3;
+    
   }
-}
+
+  
+  .photo img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .description{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    color: white;
+  }
+  .caption {
+    
+    
+    width: 100%;
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  .text{
+    
+    top: -10px;
+    /* margin-top: -10px; */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    
+    /* padding: 10px; */
+    width: 100%;
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .photo-gallery{
+        display: inline-block;
+    }
+    .caption{
+        font-size: 16px;
+    }
+    .text{
+        font-size: 14px;
+    }
+  }
